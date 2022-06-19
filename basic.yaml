@@ -1,0 +1,58 @@
+# scene
+scene: gibson
+scene_id: Rs
+build_graph: true
+load_texture: true
+pybullet_load_texture: true
+trav_map_type: no_obj
+trav_unit_size_cm: 0.1
+trav_map_erosion: 2
+should_open_all_doors: true
+
+# domain randomization
+texture_randomization_freq: null
+object_randomization_freq: null
+
+# robot
+robot: Turtlebot
+is_discrete: false
+velocity: 1.0
+
+# reward
+reward_type: geodesic
+success_reward: 10.0
+potential_reward_weight: 1.0
+collision_reward_weight: -0.1
+
+# discount factor
+discount_factor: 0.99
+
+# termination condition
+dist_tol: 0.36  # body width
+max_step: 1000
+max_collisions_allowed: 1000
+
+# misc config
+initial_pos_z_offset: 1.5
+collision_ignore_link_a_ids: [1, 2, 3, 4]  # ignore collisions with these robot links
+
+# sensor spec
+output: [rgb, pc, bump]
+# image
+# ASUS Xtion PRO LIVE
+# https://www.asus.com/us/3D-Sensor/Xtion_PRO_LIVE
+fisheye: false
+image_width: 256
+image_height: 256
+vertical_fov: 90
+# depth
+depth_low: 0.4
+depth_high: 4.0
+
+# sensor noise
+depth_noise_rate: 0.0
+scan_noise_rate: 0.0
+
+# visual objects
+visual_object_at_initial_target_pos: true
+target_visual_object_visible_to_agent: false

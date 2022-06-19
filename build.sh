@@ -1,0 +1,1 @@
+pip install -r requirements.txt --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple && pip uninstall pybullet && pip install --no-cache-dir https://github.com/StanfordVL/bullet3/archive/master.zip -i https://pypi.tuna.tsinghua.edu.cn/simple

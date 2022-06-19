@@ -1,0 +1,11 @@
+flask==2.0.1
+torch==1.2.0
+torchvision==0.4.0
+gibson2==1.0.1
+numpy-quaternion==2021.6.9.13.34.11
+scikit-image==0.17.2
+scikit-fmm==2021.2.2
+seaborn==0.11.1
+tensorboard==2.6.0
+numba==0.53.1
+python-tsp==0.2.1
