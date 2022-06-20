@@ -70,3 +70,18 @@ export CUDA_VISIBLE_DEVICES=3
 export GIBSON_DEVICE_ID=4
 ```
 
+
+## Citation
+
+If you find our work helpful in your research, please consider citing:
+```
+@InProceedings{Ye_2022_CVPR,
+    author    = {Ye, Kai and Dong, Siyan and Fan, Qingnan and Wang, He and Yi, Li and Xia, Fei and Wang, Jue and Chen, Baoquan},
+    title     = {Multi-Robot Active Mapping via Neural Bipartite Graph Matching},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {14839-14848}
+}
+```
+
