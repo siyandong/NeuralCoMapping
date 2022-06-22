@@ -6,13 +6,15 @@
 
 
 
+![demo](example/demo.gif)
+
+
+We study the problem of multi-robot active mapping, which aims for complete scene map construction in minimum time steps. The key to this problem lies in the goal position estimation to enable more efficient robot movements. Previous approaches either choose the frontier as the goal position via a myopic solution that hinders the time efficiency, or maximize the long-term value via reinforcement learning to directly regress the goal position, but does not guarantee the complete map construction. We propose a novel algorithm, namely NeuralCoMapping, which takes advantage of both approaches. Here is the implementation.
+
 ![architecture](example/arch.png)
 
 ![visual result](example/results.png)
 
-We study the problem of multi-robot active mapping, which aims for complete scene map construction in minimum time steps. The key to this problem lies in the goal position estimation to enable more efficient robot movements. Previous approaches either choose the frontier as the goal position via a myopic solution that hinders the time efficiency, or maximize the long-term value via reinforcement learning to directly regress the goal position, but does not guarantee the complete map construction. We propose a novel algorithm, namely NeuralCoMapping, which takes advantage of both approaches. Here is the implementation.
-
-![demo](example/demo.gif)
 
 ## BUILD
 
