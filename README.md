@@ -1,7 +1,20 @@
-# NeuralCoMapping
+# [CVPR2022] [Multi-Robot Active Mapping via Neural Bipartite Graph Matching](https://arxiv.org/abs/2203.16319)
+
+*Kai Ye, *[Siyan Dong](https://siyandong.github.io/), [Qingnan Fan](https://fqnchina.github.io/), [He Wang](https://hughw19.github.io/), [Li Yi](https://ericyi.github.io/), [Fei Xia](https://fxia22.github.io/), [Jue Wang](https://juewang725.github.io/), [Baoquan Chen](http://cfcs.pku.edu.cn/baoquan/)
+
+*Joint first authors
 
 
-### BUILD
+
+![architecture](example/arch.png)
+
+![visual result](example/results.png)
+
+We study the problem of multi-robot active mapping, which aims for complete scene map construction in minimum time steps. The key to this problem lies in the goal position estimation to enable more efficient robot movements. Previous approaches either choose the frontier as the goal position via a myopic solution that hinders the time efficiency, or maximize the long-term value via reinforcement learning to directly regress the goal position, but does not guarantee the complete map construction. We propose a novel algorithm, namely NeuralCoMapping, which takes advantage of both approaches. Here is the implementation.
+
+![demo](example/demo.gif)
+
+## BUILD
 
 ```shell
 conda create -p ./venv python=3.6
@@ -9,7 +22,9 @@ source activate ./venv
 sh ./build.sh && python -m gibson2.utils.assets_utils --download_assets
 ```
 
-### DATASET
+
+
+## DATASET
 
 + Gibson
 
@@ -43,7 +58,8 @@ sh ./build.sh && python -m gibson2.utils.assets_utils --download_assets
   ```
 
 
-### USAGE
+
+## USAGE
 
 + Train
 
@@ -70,3 +86,25 @@ export CUDA_VISIBLE_DEVICES=3
 export GIBSON_DEVICE_ID=4
 ```
 
+
+
+## CITATION
+
+If you find our work helpful in your research, please consider citing:
+
+```
+@InProceedings{Ye_2022_CVPR,
+    author    = {Ye, Kai and Dong, Siyan and Fan, Qingnan and Wang, He and Yi, Li and Xia, Fei and Wang, Jue and Chen, Baoquan},
+    title     = {Multi-Robot Active Mapping via Neural Bipartite Graph Matching},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {14839-14848}
+}
+```
+
+
+
+## ACKNOWLEDGMENT
+
+In this repository, we use parts of the implementation from [Active Neural SLAM](https://github.com/devendrachaplot/Neural-SLAM), [SuperGlue](https://github.com/HeatherJiaZG/SuperGlue-pytorch) and [iGibson](https://github.com/StanfordVL/iGibson). We thank the respective authors for open sourcing their code.
