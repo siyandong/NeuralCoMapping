@@ -1,4 +1,4 @@
-# [CVPR2022] [Multi-Robot Active Mapping via Neural Bipartite Graph Matching](https://arxiv.org/abs/2203.16319)
+# [CVPR 2022] [Multi-Robot Active Mapping via Neural Bipartite Graph Matching](https://arxiv.org/abs/2203.16319)
 
 *Kai Ye, *[Siyan Dong](https://siyandong.github.io/), †[Qingnan Fan](https://fqnchina.github.io/), [He Wang](https://hughw19.github.io/), [Li Yi](https://ericyi.github.io/), [Fei Xia](https://fxia22.github.io/), [Jue Wang](https://juewang725.github.io/), †[Baoquan Chen](http://cfcs.pku.edu.cn/baoquan/)
 
@@ -128,7 +128,18 @@ If you find our work helpful in your research, please consider citing:
     year      = {2022},
     pages     = {14839-14848}
 }
+@article{dong2019multi,
+  title={Multi-robot collaborative dense scene reconstruction},
+  author={Dong, Siyan and Xu, Kai and Zhou, Qiang and Tagliasacchi, Andrea and Xin, Shiqing and Nie{\ss}ner, Matthias and Chen, Baoquan},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={38},
+  number={4},
+  pages={84},
+  year={2019},
+  publisher={ACM}
+}
 ```
+
 
 
 
