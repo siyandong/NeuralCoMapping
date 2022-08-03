@@ -28,6 +28,7 @@ from .ma_env_base import MAGibsonEnv
 
 from env.utils.map_builder import MapBuilder
 from env.utils.fmm_planner import FMMPlanner
+from env.utils.co_scan import CoScanPlanner
 import env.utils.rotation_utils as ru
 
 from .utils import pose as pu
@@ -263,10 +264,9 @@ class Exploration_Env(MAGibsonEnv):
         self.pos_map = np.zeros((self.num_robots, *self.obstacle_map.shape))
         self.pos_dilation_mask = np.ones((self.num_robots, *self.obstacle_map.shape))
         self.r_threshold = 5
-        if args.baseline != 'none':
-            raise NotImplementedError
         self.long_term_planner = {
-            'none': None
+            'none': None,
+            'coscan': CoScanPlanner()
         }[args.baseline]
 
 
@@ -428,14 +428,12 @@ class Exploration_Env(MAGibsonEnv):
             if args.baseline != 'none':
                 if self.long_term_planner.check_finish(self.curr_frontier, actions == 4):
                     self.baseline_goal = [None] * self.num_robots
-                    print(self.timestep)
             else:
                 if self.timestep % args.num_local_steps == 0:
                     self.baseline_goal = [None] * self.num_robots
 
 
-        if (not self.close) and self.timestep%args.num_local_steps==0:
-            
+        if (not self.close) and self.timestep % args.num_local_steps==0:
             g_reward = 0
             area, ratio = self.get_global_reward()
             self.info['exp_reward'][:] = area
@@ -979,7 +977,7 @@ class Exploration_Env(MAGibsonEnv):
                     if obstacle is None:
                         obstacle = skimage.morphology.binary_dilation(self.obstacle_map, self.selem)
                     goal = self.long_term_planner.replan(obstacle, self.curr_frontier, goal, planning_window)
-                goal = [goal[0] - gx1, goal[1] - gy1, (1 if self.args.baseline in ['seg', 'grd', 'mtsp', 'coscan'] else 0)]
+                goal = [goal[0] - gx1, goal[1] - gy1, (1 if self.args.baseline in ['coscan'] else 0)]
         real_goal = np.copy(goal)
         x1 = min(start[0], goal[0] - goal[2])
         x2 = max(start[0], goal[0] + goal[2])

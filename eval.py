@@ -5,7 +5,7 @@ import time
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, required=True, choices=['mp3d', 'gibson'])
-    parser.add_argument('--method', type=str, required=True, choices=['coscan', 'mtsp', 'grd', 'seg', 'rl'])
+    parser.add_argument('--method', type=str, required=True, choices=['coscan', 'rl'])
     parser.add_argument('-n', '--num-episodes', type=int, required=True)
     parser.add_argument('--load', default='./pretrained/hrl3.global', type=str)
     parser.add_argument('--dir', default='./std', type=str)
@@ -14,14 +14,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.dataset == 'mp3d':
-        scenes = ['mp3dhq0-' + i for i in 'abcdefghi']
+        scenes = ['mp3dhq0-' + i for i in 'abcdefghijkl']
     elif args.dataset == 'gibson':
-        scenes = ['hq-' + i for i in 'abcd']
+        scenes = ['hq-' + i for i in 'abcdef']
     else:
         exit(1)
-
-    if args.method != 'rl':
-        raise NotImplementedError
 
     for idx, scene in enumerate(scenes):
         exp_name = 'eval_{}_{}'.format(args.method, scene.replace('-', ''))

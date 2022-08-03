@@ -13,7 +13,7 @@ def main():
 
     result = {}
     split = [[lb, rb] for lb, rb in zip([0] + eval('[' + args.bins + ']'), eval('[' + args.bins + ']') + [args.max_step + 1])]
-    dataset = ['mp3dhq0-' + i for i in 'abcdefghi'] if args.dataset == 'mp3d' else ['hq-' + i for i in 'abcd']
+    dataset = ['mp3dhq0-' + i for i in 'abcdefghijkl'] if args.dataset == 'mp3d' else ['hq-' + i for i in 'abcdef']
 
     for method in ['coscan', 'rl']:
         for s in dataset:
@@ -56,7 +56,7 @@ def main():
         else:
             mean_area += np.vstack(area)
         ratio, length = np.vstack(ratio), np.vstack(length)
-        valid_length = length < 4999 if valid_length is None else (length < 4999) & valid_length
+        valid_length = length < args.max_step if valid_length is None else (length < args.max_step) & valid_length
         valid_ratio = ratio > 0.9 if valid_ratio is None else (ratio > 0.9) & valid_ratio
         result[method_name] = ratio, length
     mean_area /= len(result.keys())

@@ -19,7 +19,7 @@ def get_parser():
                         help='how many episodes to skip (default: 0)')
     parser.add_argument('--robot_scale', type=float, default=1,
                         help='scale of robots\' size')
-    parser.add_argument('--baseline', type=str, default='none', choices=['none', 'coscan', 'seg', 'mtsp', 'grd'],
+    parser.add_argument('--baseline', type=str, default='none', choices=['none', 'coscan'],
                         help='specify the baseline method (default: none for the RL method)')
     parser.add_argument('--use_single_gpu', type=int, default=0,
                         help='specify a single GPU for CUDA when not setting GIBSON_DEVICE_ID or CUDA_VISIBLE_DEVICES (default: 0)')

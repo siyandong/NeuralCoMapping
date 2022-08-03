@@ -78,7 +78,21 @@ python main.py --exp_name 'eval_coscan_mp3dhq0f' --scenes_file scenes/mp3dhq0-f.
 + Test via scripts
 
 ```shell
-python eval.py --load best.global --dataset mp3d --method rl -n 10
+python eval.py --load best.global --dataset mp3d --method rl -n 5
+python eval.py --dataset mp3d --method coscan -n 5
+```
+
++ Analyze performance (compared to CoScan)
+
+```shell
+python analyze.py --dir std --dataset gibson -ne 5 --bins 35,70
+python analyze.py --dir std --dataset mp3d -ne 5 --bins 100
+```
+
++ Analyze performance (single method)
+
+```shell
+python scripts/easy_analyze.py rl --dataset hq --subset abcdef --dir std
 ```
 
 + Specify GPU Index
@@ -87,6 +101,18 @@ python eval.py --load best.global --dataset mp3d --method rl -n 10
 export CUDA_VISIBLE_DEVICES=3
 export GIBSON_DEVICE_ID=4
 ```
+
++ Visualization
+
+```shell
+python main.py --exp_name 'eval_coscan_mp3dhq0f' --scenes_file scenes/mp3dhq0-f.scenes --dump_location /mnt/disk1/vis --num_episodes 5 --load_global best.global --vis_type 2
+# dump at ./video/
+python scripts/map2d.py --dir /mnt/disk1/vis vis_hrl -ne 5 -ns 4
+```
+
++ Pretrained model
+
+  [Download](https://drive.google.com/file/d/1F9KH0VZXCiwlVDy9umGjNkLl1adh6htW/view?usp=sharing)
 
 
 
