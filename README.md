@@ -1,9 +1,8 @@
 # [CVPR2022] [Multi-Robot Active Mapping via Neural Bipartite Graph Matching](https://arxiv.org/abs/2203.16319)
 
-*Kai Ye, *[Siyan Dong](https://siyandong.github.io/), [Qingnan Fan](https://fqnchina.github.io/), [He Wang](https://hughw19.github.io/), [Li Yi](https://ericyi.github.io/), [Fei Xia](https://fxia22.github.io/), [Jue Wang](https://juewang725.github.io/), [Baoquan Chen](http://cfcs.pku.edu.cn/baoquan/)
+*Kai Ye, *[Siyan Dong](https://siyandong.github.io/), †[Qingnan Fan](https://fqnchina.github.io/), [He Wang](https://hughw19.github.io/), [Li Yi](https://ericyi.github.io/), [Fei Xia](https://fxia22.github.io/), [Jue Wang](https://juewang725.github.io/), †[Baoquan Chen](http://cfcs.pku.edu.cn/baoquan/)
 
-*Joint first authors
-
+*Joint first authors | †Corresponding authors | [Video](https://www.youtube.com/watch?v=M7LRzWDG6mk) | [Poster](https://drive.google.com/drive/folders/165IrU8BUIu-fQGhiaV7Sc0zqETs_I6g_?usp=sharing)
 
 
 ![demo](example/demo.gif)
